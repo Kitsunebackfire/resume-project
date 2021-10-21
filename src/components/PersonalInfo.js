@@ -14,7 +14,6 @@ function PersonalInfo(props) {
             type="text"
             defaultValue=""
             placeholder="First Name"
-            //onChange={props.handleChange}
             className={PersonalInfoStyling.inputStyling}
           />
           <input
@@ -22,7 +21,6 @@ function PersonalInfo(props) {
             type="text"
             defaultValue=""
             placeholder="Last Name"
-            //onChange={props.handleChange}
             className={PersonalInfoStyling.inputStyling}
           />
           <input
@@ -32,7 +30,6 @@ function PersonalInfo(props) {
             defaultValue=""
             placeholder="Email"
             required
-            //onChange={props.handleChange}
             className={PersonalInfoStyling.inputStyling}
           />
           <SaveEditBtn />

@@ -1,5 +1,11 @@
+.nameContainer {
+  padding: 0;
+  height: 70px;
+  margin: 0;
+  background-color: blue;
+}
+
 .name {
-  background-color: rgb(94, 94, 255);
   margin: 0;
   padding: none;
   color: white;
