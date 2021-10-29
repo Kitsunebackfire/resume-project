@@ -2,6 +2,7 @@
   display: grid;
   grid-template-rows: 0.5fr 4fr;
   grid-template-columns: 1fr 1fr;
+  background-color: whitesmoke;
 }
 
 .projectTitleBackground {

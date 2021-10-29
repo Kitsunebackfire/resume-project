@@ -9,12 +9,112 @@
 
 .inputContainer {
   display: grid;
+  grid-template-rows: 5;
+  grid-template-columns: repeat(4, auto);
+}
+
+.university {
+  grid-row-start: 1;
+  grid-row-end: 2;
+  grid-column-start: 1;
+  grid-column-end: 5;
+}
+.degree {
+  grid-row-start: 2;
+  grid-row-end: 3;
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+.subject {
+  grid-row-start: 2;
+  grid-row-end: 3;
+  grid-column-start: 3;
+  grid-column-end: 5;
+}
+
+.degreeState {
+  grid-row-start: 3;
+  grid-row-end: 4;
+  grid-column-start: 1;
+  grid-column-end: 5;
+}
+.from {
+  display: flex;
+  align-self: center;
+  justify-self: center;
+  grid-row-start: 4;
+  grid-row-end: 5;
+  grid-column-start: 1;
+  grid-column-end: 2;
+}
+.degreeDateFrom {
+  grid-row-start: 4;
+  grid-row-end: 5;
+  grid-column-start: 2;
+  grid-column-end: 3;
+}
+.to {
+  display: flex;
+  align-self: center;
+  justify-self: center;
+  grid-row-start: 4;
+  grid-row-end: 5;
+  grid-column-start: 3;
+  grid-column-end: 4;
+}
+.degreeDateTo {
+  grid-row-start: 4;
+  grid-row-end: 5;
+  grid-column-start: 4;
+  grid-column-end: 5;
+}
+
+.addButton {
+  grid-row-start: 5;
+  grid-row-end: 6;
+  grid-column-start: 1;
+  grid-column-end: 5;
+  margin-top: 5px;
+  margin-left: 5px;
+  height: 27px;
+  width: 420px;
+  background-color: rgb(134, 134, 134);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+}
+
+.addButton:active {
+  background-color: rgb(175, 175, 175);
+}
+.deleteBtn {
+  margin-top: 5px;
+  margin-left: 5px;
+  height: 27px;
+  width: 420px;
+  background-color: rgba(231, 69, 69, 0.733);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  border: 1px solid black;
+  box-shadow: none;
+}
+
+.deleteBtn:active {
+  background-color: rgb(243, 51, 51);
 }
 
 .inputStyling {
   height: 25px;
   border-radius: 5px;
-  margin: 5px 0px;
+  margin: 5px 5px;
   border: none;
   padding-left: 7px;
 }

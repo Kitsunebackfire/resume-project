@@ -1,7 +1,8 @@
 .saveEditBtn {
   margin-top: 5px;
+  margin-left: 5px;
   height: 27px;
-  width: 100%;
+  width: 420px;
   background-color: rgb(134, 134, 134);
   display: flex;
   justify-content: center;
@@ -9,4 +10,13 @@
   border-radius: 5px;
   color: white;
   cursor: pointer;
+
+  grid-row-start: 5;
+  grid-row-end: 6;
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+.saveEditBtn:active {
+  background-color: rgb(175, 175, 175);
 }

@@ -10,18 +10,21 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      firstName: "First",
-      lastName: "Last",
-      email: "email",
-      university: "university",
-      degree: "degree",
-      degreeCity: "city",
+      firstName: "",
+      lastName: "",
+      email: "",
+      title: "",
+      address: "",
+      phoneNumber: "",
+      education: [],
       experience: [],
     };
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleExperienceArray = this.handleExperienceArray.bind(this);
+    this.handleDeleteExperience = this.handleDeleteExperience.bind(this);
+    this.handleEducationArray = this.handleEducationArray.bind(this);
   }
 
   handleChange(event) {
@@ -30,23 +33,18 @@ class App extends React.Component {
     console.log(this.state);
   }
 
-  /*renderExperience() {
-    let renderedExperience = this.state.experience;
-    for (let i = 0; i < renderedExperience.length; i++) {
-      return (
-        <div>
-          {renderedExperience[i][0]} + {renderedExperience[i][1]}
-        </div>
-      );
-    }
+  handleDeleteExperience(event) {
+    event.preventDefault();
+    const experienceArray = this.state.experience;
+    experienceArray.pop();
+
+    this.setState({ experience: experienceArray });
+    console.log(this.state.experience);
   }
-  */
 
   handleExperienceArray(event) {
     event.preventDefault();
-
     const experienceArray = this.state.experience;
-
     let injectedArray = [];
 
     const targetContainer = event.target.children[0].children;
@@ -58,11 +56,22 @@ class App extends React.Component {
     experienceArray.push(injectedArray);
     this.setState({ experience: experienceArray });
     console.log(this.state.experience);
+  }
 
-    //const experienceArray = this.state.experience;
-    //let injectedArray = [event.company, event.from, event.to];
-    //experienceArray.push(injectedArray);
-    //this.setState({ experience: experienceArray });
+  handleEducationArray(event) {
+    event.preventDefault();
+    const educationArray = this.state.education;
+    let injectedArray = [];
+
+    const targetContainer = event.target.children[0].children;
+    for (let i = 0; i < targetContainer.length - 1; i++) {
+      injectedArray.push(targetContainer[i].value);
+      targetContainer[i].value = "";
+    }
+
+    educationArray.push(injectedArray);
+    this.setState({ education: educationArray });
+    console.log(this.state.education);
   }
 
   handleSubmit(event) {
@@ -86,8 +95,11 @@ class App extends React.Component {
         </div>
         <div className={AppStyling.entryContainer}>
           <PersonalInfo handleSubmit={this.handleSubmit} />
-          <Education handleSubmit={this.handleSubmit} />
-          <Experience handleExperienceArray={this.handleExperienceArray} />
+          <Education handleEducationArray={this.handleEducationArray} />
+          <Experience
+            handleDeleteExperience={this.handleDeleteExperience}
+            handleExperienceArray={this.handleExperienceArray}
+          />
         </div>
         <div className={AppStyling.renderContainer}>
           <RenderedResume

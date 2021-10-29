@@ -8,20 +8,57 @@ function PersonalInfo(props) {
         Personal Information
       </div>
       <form onSubmit={props.handleSubmit}>
-        <div id="inputContainer" className={PersonalInfoStyling.inputContainer}>
+        <div className={PersonalInfoStyling.inputContainer}>
           <input
             name="firstName"
             type="text"
             defaultValue=""
             placeholder="First Name"
-            className={PersonalInfoStyling.inputStyling}
+            className={[
+              PersonalInfoStyling.inputStyling,
+              PersonalInfoStyling.firstName,
+            ].join(" ")}
           />
           <input
             name="lastName"
             type="text"
             defaultValue=""
             placeholder="Last Name"
-            className={PersonalInfoStyling.inputStyling}
+            className={[
+              PersonalInfoStyling.inputStyling,
+              PersonalInfoStyling.lastName,
+            ].join(" ")}
+          />
+          <input
+            name="title"
+            type="text"
+            defaultValue=""
+            placeholder="Title"
+            className={[
+              PersonalInfoStyling.inputStyling,
+              PersonalInfoStyling.title,
+            ].join(" ")}
+          />
+
+          <input
+            name="address"
+            type="text"
+            defaultValue=""
+            placeholder="Address"
+            className={[
+              PersonalInfoStyling.inputStyling,
+              PersonalInfoStyling.address,
+            ].join(" ")}
+          />
+          <input
+            name="phoneNumber"
+            type="text"
+            defaultValue=""
+            placeholder="Phone Number"
+            className={[
+              PersonalInfoStyling.inputStyling,
+              PersonalInfoStyling.phoneNumber,
+            ].join(" ")}
           />
           <input
             name="email"
@@ -30,7 +67,10 @@ function PersonalInfo(props) {
             defaultValue=""
             placeholder="Email"
             required
-            className={PersonalInfoStyling.inputStyling}
+            className={[
+              PersonalInfoStyling.inputStyling,
+              PersonalInfoStyling.email,
+            ].join(" ")}
           />
           <SaveEditBtn />
         </div>

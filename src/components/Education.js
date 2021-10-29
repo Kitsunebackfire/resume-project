@@ -1,39 +1,81 @@
 import EducationStyling from "./css/Education.module.css";
-import SaveEditBtn from "./SaveEditBtn.js";
 
 function Education(props) {
   return (
     <div className={EducationStyling.container}>
       <div className={EducationStyling.sectionTitle}>Education</div>
-      <form onSubmit={props.handleSubmit}>
+      <form onSubmit={props.handleEducationArray}>
         <div id="inputContainer" className={EducationStyling.inputContainer}>
           <input
             name="university"
             type="text"
             defaultValue=""
             placeholder="University"
-            //onChange={props.handleChange}
-            className={EducationStyling.inputStyling}
+            className={[
+              EducationStyling.inputStyling,
+              EducationStyling.university,
+            ].join(" ")}
           />
           <input
             name="degree"
             type="text"
             defaultValue=""
-            placeholder="Degree"
-            //onChange={props.handleChange}
-            className={EducationStyling.inputStyling}
+            placeholder="Degree Type"
+            className={[
+              EducationStyling.inputStyling,
+              EducationStyling.degree,
+            ].join(" ")}
           />
           <input
-            name="degreeCity"
+            name="subject"
             type="text"
             defaultValue=""
-            placeholder="City"
-            //onChange={props.handleChange}
-            className={EducationStyling.inputStyling}
+            placeholder="Subject"
+            className={[
+              EducationStyling.inputStyling,
+              EducationStyling.subject,
+            ].join(" ")}
           />
-          <SaveEditBtn />
+          <input
+            name="degreeState"
+            type="text"
+            defaultValue=""
+            placeholder="State"
+            className={[
+              EducationStyling.inputStyling,
+              EducationStyling.degreeState,
+            ].join(" ")}
+          />
+          <div className={EducationStyling.from}>From:</div>
+          <input
+            name="degreeDateFrom"
+            type="date"
+            defaultValue=""
+            className={[
+              EducationStyling.inputStyling,
+              EducationStyling.degreeDateFrom,
+            ].join(" ")}
+          />
+          <div className={EducationStyling.to}>To: </div>
+          <input
+            name="degreeDateTo"
+            type="date"
+            defaultValue=""
+            className={[
+              EducationStyling.inputStyling,
+              EducationStyling.degreeDateTo,
+            ].join(" ")}
+          />
+
+          <button className={EducationStyling.addButton}>Add</button>
         </div>
       </form>
+      <button
+        className={EducationStyling.deleteBtn}
+        onClick={props.handleDeleteEducation}
+      >
+        Delete Last Entry
+      </button>
     </div>
   );
 }
