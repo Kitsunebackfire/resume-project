@@ -4,7 +4,7 @@ function Education(props) {
   return (
     <div className={EducationStyling.container}>
       <div className={EducationStyling.sectionTitle}>Education</div>
-      <form onSubmit={props.handleEducationArray}>
+      <form onSubmit={props.handleAddEducation}>
         <div id="inputContainer" className={EducationStyling.inputContainer}>
           <input
             name="university"

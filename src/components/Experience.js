@@ -4,7 +4,7 @@ function Experience(props) {
   return (
     <div className={ExperienceStyling.container}>
       <div className={ExperienceStyling.sectionTitle}>Work History</div>
-      <form onSubmit={props.handleExperienceArray}>
+      <form onSubmit={props.handleAddExperience}>
         <div id="inputContainer" className={ExperienceStyling.inputContainer}>
           <input
             name="previousJob"
